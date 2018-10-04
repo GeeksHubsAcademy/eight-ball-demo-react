@@ -1,0 +1,36 @@
+.Output {
+    .record {
+        margin: 0 20px;
+        padding: 0.3em;
+        margin-bottom: 0.5em;
+        text-align: left;
+        font-size: 0.8em;
+
+
+    }
+
+    .last {
+        font-size: 1.4em;
+        background: rgba(255, 255, 255, 0.05);
+        // border-radius: 10px;
+    }
+
+    .question {
+        font-size: 0.6em;
+    }
+    .answer {
+
+    }
+    .afirmative {
+        border-left: solid 3px green;
+    }
+
+    .doubt {
+        border-left: solid 3px orange;
+    }
+
+    .negative {
+        border-left: solid 3px red;
+    }
+
+}

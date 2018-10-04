@@ -1,0 +1,31 @@
+.Input {
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    * {
+        margin:0.5em;
+        &:focus {
+            outline: white auto 5px !important;
+        }
+    }
+
+    input {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1.4em;
+        text-align: center;
+        padding: 0.5em;
+        width: 70vw;
+        outline: rebeccapurple auto 5px;
+    }
+    button {
+        font-size: 1.2em;
+        padding: 0.5em;
+        border: none;
+        background: rebeccapurple;
+        color: white;
+
+    }
+}
