@@ -5,26 +5,21 @@ import { connect } from "react-redux";
 import { addQuestion } from "../actions";
 class Input extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {question:'                                                                                                                                                                                                                                                                                                                                                                                                                                  '}
-  }
-
-  changeInput = (event) => {
-    this.setState({question: event.target.value })
-  }
-
-
-
   render() {
     return (
       <div>
-        <input value={this.state.question} onChange={this.changeInput}/>
+        <input value={this.props.question} onChange={(event) => {this.props.onChangeQuestion(event.target.value)}}/>
         <button onClick={() => {
-          this.props.onSubmitQuestion(this.state.question)
+          this.props.onSubmitQuestion(this.props.question)
         }} >Preguntar</button>
       </div>
     )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+  }
+}
+
+const mapStateToProps = (state)  => {
+  return {
+    question: state.question
   }
 }
 
@@ -33,7 +28,10 @@ const mapDispatchToProps = (dispatch) =>
     onSubmitQuestion: (question) => {
       const answer = magicBallService(question);
       return dispatch(addQuestion(answer));
+    },
+    onChangeQuestion: (question) => {
+      return dispatch({type: 'UPDATE_QUESTION', question: question});
     } 
 });
 
-export default connect(null,mapDispatchToProps)(Input);
+export default connect(mapStateToProps,mapDispatchToProps)(Input);
