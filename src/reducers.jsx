@@ -5,11 +5,7 @@ const initialState = {
 function reducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_QUESTION':
-        return Object.assign({}, state, {
-            history: [
-            ...state.history,action.answer
-            ]
-            })
+        return{ history: [action.answer, ...state.history] }
         default:
             return state;    
     }
