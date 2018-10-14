@@ -1,6 +1,8 @@
 import React from "react";
 import "./output.scss";
-export default class Output extends React.Component {
+import { connect } from "react-redux";
+class Output extends React.Component {
+  
   render() {
     return (
       <div className="Output">
@@ -14,6 +16,17 @@ export default class Output extends React.Component {
           </div>
         ))}
       </div>
-    );
+    )
   }
 }
+
+const mapStateToProps = (state)  => {
+  return {
+    history: state.history
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(Output);
