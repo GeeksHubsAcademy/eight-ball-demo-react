@@ -2,7 +2,7 @@ import React from "react";
 import './input.scss';
 import magicBallService from "../services/magicService";
 import { connect } from "react-redux";
-import { addQuestion } from "../actions";
+import { addQuestion, updateQuestion } from "../actions";
 class Input extends React.Component {
 
   render() {
@@ -30,7 +30,7 @@ const mapDispatchToProps = (dispatch) =>
       return dispatch(addQuestion(answer));
     },
     onChangeQuestion: (question) => {
-      return dispatch({type: 'UPDATE_QUESTION', question: question});
+      return dispatch(updateQuestion(question));
     } 
 });
 
